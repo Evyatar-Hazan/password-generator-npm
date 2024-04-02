@@ -1,0 +1,30 @@
+{
+  "name": "password-generator-npm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest --config jest.config.cjs",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Evyatar-Hazan/password-generator-npm.git"
+  },
+  "author": "Evyatar Hazan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Evyatar-Hazan/password-generator-npm/issues"
+  },
+  "homepage": "https://github.com/Evyatar-Hazan/password-generator-npm#readme",
+  "dependencies": {
+    "@babel/preset-env": "^7.23.9",
+    "babel-jest": "^29.7.0",
+    "crypto-js": "^4.2.0",
+    "ts-jest": "^29.1.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
