@@ -133,4 +133,4 @@ If you discover any issues, please [create an issue](https://github.com/Evyatar-
 
 ## Support
 
-For any inquiries or support requests, please contact us at [evyatarhazan3.14@example.com](mailto:evyatarhazan3.14@example.com).
+For any inquiries or support requests, please contact us at [evyatarhazan3.14@gmail.com](mailto:evyatarhazan3.14@gmail.com).

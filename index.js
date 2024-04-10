@@ -25,6 +25,7 @@ const concatenateAndHash = (textArray = [""]) => {
  * @returns {string|null} Numeric password extracted from the hash.
  */
 const extractNumbers = (hash, numberOfCharacters=8) => {
+  numberOfCharacters = chackLimitNumberOfCharacters(numberOfCharacters)
   hash = concatenateAndHash(hash)
   // Extract numeric substrings from the hash
   const numbers = hash.match(/\d+/g);
@@ -44,6 +45,7 @@ const extractNumbers = (hash, numberOfCharacters=8) => {
  * @returns {string|null} Alphabetical password extracted from the hash.
  */
 const extractLetters = (hash, numberOfCharacters=8) => {
+  numberOfCharacters = chackLimitNumberOfCharacters(numberOfCharacters)
   hash = concatenateAndHash(hash)
   // Extract lowercase alphabetical substrings from the hash
   const letters = hash.match(/[a-z]+/g);
@@ -64,6 +66,7 @@ const extractLetters = (hash, numberOfCharacters=8) => {
  * @returns {string} Combined alphanumeric password.
  */
 const combineNumbersAndLetters = (hash, numberOfCharacters=8) => {
+  numberOfCharacters = chackLimitNumberOfCharacters(numberOfCharacters)
   hash = concatenateAndHash(hash)
   const numbers = extractNumbers(hash, numberOfCharacters)
   const letters = extractLetters(hash, numberOfCharacters)
@@ -106,6 +109,7 @@ const calculateStringHash = (hash) => {
  * @returns {string} Transformed string with uppercase letters.
  */
 const transformToUpperCase = (hash, numberOfCharacters=8) => {
+  numberOfCharacters = chackLimitNumberOfCharacters(numberOfCharacters)
   const str = concatenateAndHash(hash)
   let changed = false;
   // Replace lowercase letters with uppercase based on a random hash calculation
@@ -143,6 +147,7 @@ const transformToUpperCase = (hash, numberOfCharacters=8) => {
  * @returns {string} Transformed string with a sign at the beginning.
  */
 const transformToSign = (hash, numberOfCharacters=8) => {
+  numberOfCharacters = chackLimitNumberOfCharacters(numberOfCharacters)
   const str = transformToUpperCase(hash)
   // Select a random sign from the array based on a hash calculation
   const randomSign = calculateStringHash(str);
@@ -151,6 +156,21 @@ const transformToSign = (hash, numberOfCharacters=8) => {
   // Replace the first alphanumeric character in the string with the selected sign
   return str.replace(/[a-zA-Z0-9]/, selectedSign).slice(0, numberOfCharacters);
 };
+
+
+/**
+ * Checks if the given number of characters exceeds a limit and returns either
+ * the limit or the original number of characters accordingly.
+ * @param {number} numberOfCharacters - The number of characters to check.
+ * @returns {number} - Either the original number of characters or the limit (256).
+ */
+const chackLimitNumberOfCharacters = (numberOfCharacters) => {
+  if (numberOfCharacters > 256) {
+    return 256
+  } else {
+    return numberOfCharacters
+  }
+}
 
 // Exporting the modularized functions
 export {
