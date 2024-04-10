@@ -158,17 +158,6 @@ export {
   extractNumbers,
   extractLetters,
   combineNumbersAndLetters,
-  calculateStringHash,
   transformToUpperCase,
   transformToSign,
 };
-
-// Example usage
-const x = concatenateAndHash("qw1erty")
-console.log("concatenateAndHash", concatenateAndHash(x))
-console.log("extractNumbers", extractNumbers(x))
-console.log("extractLetters", extractLetters(x))
-console.log("combineNumbersAndLetters", combineNumbersAndLetters(x))
-console.log("calculateStringHash", calculateStringHash(x))
-console.log("transformToUpperCase", transformToUpperCase(x))
-console.log("transformToSign", transformToSign(x))
